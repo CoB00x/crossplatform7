@@ -16,18 +16,53 @@ class MedicalCenterApp extends StatelessWidget {
     return MaterialApp(
       title: 'Медицинский Центр',
       theme: AppTheme.lightTheme,
-      home: AppStateContainer(),
+      initialRoute: '/',
       debugShowCheckedModeBanner: false,
 
-      // Маршрутизированная навигацияj
       routes: {
         '/': (context) => AppStateContainer(),
-        '/doctors': (context) => DoctorsListScreen(),
-        '/appointments': (context) => AppointmentsListScreen(),
-        '/gallery': (context) => MedicalGalleryScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/departments': (context) => DepartmentScreen(),
-        '/contacts': (context) => ContactsScreen(),
+        '/doctors': (context) => const DoctorsContainer(
+          child: AppointmentsContainer(
+            child: ProfileContainer(
+              child: DoctorsListScreen(),
+            ),
+          ),
+        ),
+        '/appointments': (context) => DoctorsContainer(
+          child: AppointmentsContainer(
+            child: ProfileContainer(
+              child: AppointmentsListScreen(),
+            ),
+          ),
+        ),
+        '/gallery': (context) => DoctorsContainer(
+          child: AppointmentsContainer(
+            child: ProfileContainer(
+              child: MedicalGalleryScreen(),
+            ),
+          ),
+        ),
+        '/profile': (context) => DoctorsContainer(
+          child: AppointmentsContainer(
+            child: ProfileContainer(
+              child: ProfileScreen(),
+            ),
+          ),
+        ),
+        '/departments': (context) => DoctorsContainer(
+          child: AppointmentsContainer(
+            child: ProfileContainer(
+              child: DepartmentScreen(),
+            ),
+          ),
+        ),
+        '/contacts': (context) => const DoctorsContainer(
+          child: AppointmentsContainer(
+            child: ProfileContainer(
+              child: ContactsScreen(),
+            ),
+          ),
+        ),
       },
     );
   }
@@ -55,13 +90,21 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
 
+  // Список экранов для горизонтальной навигации
   final List<Widget> _screens = [
     DoctorsListScreen(),
     AppointmentsListScreen(),
     MedicalGalleryScreen(),
     ProfileScreen(),
-    DepartmentScreen(), // Новый экран отделений
+    DepartmentScreen(),
   ];
+
+  void _onItemTapped(int index) {
+    // ✅ ГОРИЗОНТАЛЬНАЯ навигация внутри контейнера
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,11 +122,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ),
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
+          onTap: _onItemTapped,
           backgroundColor: Colors.blue[800],
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white70,

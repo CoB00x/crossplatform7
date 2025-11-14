@@ -14,7 +14,6 @@ class ContactsScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            // Маршрутизированная навигация назад
             Navigator.pop(context);
           },
         ),
@@ -52,26 +51,26 @@ class ContactsScreen extends StatelessWidget {
           SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.all(16),
-            child: Column(
+            child:
+            Column(
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Навигация по именованному маршруту
-                    Navigator.pushNamed(context, '/doctors');
+                    Navigator.pushReplacementNamed(context, '/doctors');
                   },
                   child: Text('Перейти к врачам'),
                 ),
                 SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/appointments');
+                    Navigator.pushReplacementNamed(context, '/appointments');
                   },
                   child: Text('Перейти к записям'),
                 ),
                 SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/gallery');
+                    Navigator.pushReplacementNamed(context, '/gallery');
                   },
                   child: Text('Перейти к галерее'),
                 ),

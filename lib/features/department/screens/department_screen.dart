@@ -116,7 +116,6 @@ class DepartmentScreen extends StatelessWidget {
                       backgroundColor: department['color'].withOpacity(0.2),
                     ),
                     onTap: () {
-                      // Маршрутизированная навигация с параметрами
                       Navigator.push(
                         context,
                         MaterialPageRoute(
