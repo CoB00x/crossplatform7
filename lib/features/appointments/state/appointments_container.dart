@@ -24,7 +24,7 @@ class _AppointmentsContainerState extends State<AppointmentsContainer> {
       date: '2024-01-20',
       time: '10:00',
       purpose: 'Консультация',
-      imageUrl: 'https://avatars.mds.yandex.net/i?id=d9ab49f0c777060524955c5b732cd5faa933f60b-5233313-images-thumbs&n=13', // Добавляем изображение
+      imageUrl: 'https://avatars.mds.yandex.net/i?id=d9ab49f0c777060524955c5b732cd5faa933f60b-5233313-images-thumbs&n=13',
     ),
     Appointment(
       id: '2',
@@ -33,7 +33,7 @@ class _AppointmentsContainerState extends State<AppointmentsContainer> {
       date: '2024-01-21',
       time: '14:30',
       purpose: 'Обследование',
-      imageUrl: 'https://avatars.mds.yandex.net/i?id=d9ab49f0c777060524955c5b732cd5faa933f60b-5233313-images-thumbs&n=13', // Добавляем изображение
+      imageUrl: 'https://avatars.mds.yandex.net/i?id=d9ab49f0c777060524955c5b732cd5faa933f60b-5233313-images-thumbs&n=13',
     ),
   ];
 

@@ -21,7 +21,7 @@ class AppointmentTile extends StatelessWidget {
       ),
       child: ListTile(
         leading: ImageService.buildCircleNetworkImage(
-          appointment.imageUrl, // Теперь используем imageUrl из appointment
+          appointment.imageUrl,
           size: 50,
         ),
         title: Text(

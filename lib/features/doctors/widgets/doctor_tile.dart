@@ -23,7 +23,6 @@ class DoctorTile extends StatelessWidget {
         padding: EdgeInsets.all(12),
         child: Row(
           children: [
-            // Круглое изображение врача (упрощенная версия)
             CircleAvatar(
               radius: 25,
               backgroundColor: Colors.blue[100],
@@ -38,7 +37,6 @@ class DoctorTile extends StatelessWidget {
 
             SizedBox(width: 16),
 
-            // Информация о враче
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +74,6 @@ class DoctorTile extends StatelessWidget {
               ),
             ),
 
-            // Кнопка удаления
             IconButton(
               icon: Icon(Icons.delete, color: Colors.red),
               onPressed: onDelete,

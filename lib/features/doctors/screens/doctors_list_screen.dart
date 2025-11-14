@@ -76,7 +76,6 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
                 _experienceController.clear();
                 Navigator.pop(context);
 
-                // Показываем уведомление
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('Врач добавлен успешно'),
@@ -103,7 +102,6 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
         foregroundColor: Colors.white,
         elevation: 4,
         actions: [
-          // Демонстрация маршрутизированной навигации
           IconButton(
             icon: Icon(Icons.business),
             onPressed: () {

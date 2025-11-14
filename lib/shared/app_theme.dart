@@ -13,8 +13,6 @@ class AppTheme {
         elevation: 4,
         centerTitle: true,
       ),
-
-      // Убираем cardTheme и inputDecorationTheme временно
     );
   }
 }

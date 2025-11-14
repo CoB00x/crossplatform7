@@ -68,7 +68,7 @@ class _AppointmentsListScreenState extends State<AppointmentsListScreen> {
                   date: _dateController.text,
                   time: _timeController.text,
                   purpose: _purposeController.text,
-                  imageUrl: ImageService.getAppointmentImage( // ДОБАВЛЯЕМ!
+                  imageUrl: ImageService.getAppointmentImage(
                       DateTime.now().millisecondsSinceEpoch.toString()
                   ),
                 );
@@ -103,7 +103,7 @@ class _AppointmentsListScreenState extends State<AppointmentsListScreen> {
         ],
       ),
       body: appointmentsContainer.appointments.isEmpty
-          ? EmptyState(
+          ? const EmptyState(
         title: 'Нет записей',
         message: 'Добавьте первую запись на прием',
         icon: Icons.calendar_today,

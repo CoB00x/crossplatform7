@@ -81,7 +81,7 @@ class AppStateContainer extends StatelessWidget {
   }
 }
 
-// Главный экран с BottomNavigationBar (вертикальная навигация)
+// Главный экран с BottomNavigationBar
 class MainNavigationScreen extends StatefulWidget {
   @override
   _MainNavigationScreenState createState() => _MainNavigationScreenState();
@@ -100,7 +100,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   ];
 
   void _onItemTapped(int index) {
-    // ✅ ГОРИЗОНТАЛЬНАЯ навигация внутри контейнера
     setState(() {
       _currentIndex = index;
     });

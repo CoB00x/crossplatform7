@@ -48,7 +48,6 @@ class DepartmentScreen extends StatelessWidget {
         foregroundColor: Colors.white,
         elevation: 4,
         actions: [
-          // Кнопка для маршрутизированной навигации
           IconButton(
             icon: Icon(Icons.contacts),
             onPressed: () {
@@ -59,7 +58,6 @@ class DepartmentScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Горизонтальная навигация - табы
           Container(
             height: 50,
             child: ListView.builder(
@@ -243,7 +241,6 @@ class DepartmentDetailScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Навигация назад
                 Navigator.pop(context);
               },
               child: Text('Назад к списку отделений'),

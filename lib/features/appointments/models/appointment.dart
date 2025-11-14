@@ -5,8 +5,7 @@ class Appointment {
   final String date;
   final String time;
   final String purpose;
-  final String imageUrl; // Добавляем поле для изображения
-
+  final String imageUrl;
   Appointment({
     required this.id,
     required this.doctorName,
@@ -14,7 +13,7 @@ class Appointment {
     required this.date,
     required this.time,
     required this.purpose,
-    required this.imageUrl, // Обязательное поле
+    required this.imageUrl,
   });
 
   Appointment copyWith({

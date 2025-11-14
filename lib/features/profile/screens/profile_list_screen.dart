@@ -66,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 20),
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'ФИО',
                 prefixIcon: Icon(Icons.person),
               ),
@@ -74,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 16),
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email',
                 prefixIcon: Icon(Icons.email),
               ),
@@ -83,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 16),
             TextField(
               controller: _phoneController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Телефон',
                 prefixIcon: Icon(Icons.phone),
               ),
@@ -92,7 +92,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 16),
             TextField(
               controller: _addressController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Адрес',
                 prefixIcon: Icon(Icons.home),
               ),
@@ -100,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 16),
             TextField(
               controller: _medicalHistoryController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Медицинская история',
                 prefixIcon: Icon(Icons.medical_services),
               ),
@@ -109,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 24),
             ElevatedButton(
               onPressed: _saveProfile,
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                 child: Text('Сохранить профиль'),
               ),
