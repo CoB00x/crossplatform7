@@ -6,6 +6,8 @@ import '../../../shared/widgets/empty_state.dart';
 import '../../../services/image_service.dart';
 
 class DoctorsListScreen extends StatefulWidget {
+  const DoctorsListScreen({super.key});
+
   @override
   _DoctorsListScreenState createState() => _DoctorsListScreenState();
 }
@@ -26,7 +28,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
             children: [
               TextField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'ФИО врача',
                   border: OutlineInputBorder(),
                 ),
@@ -34,7 +36,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
               SizedBox(height: 12),
               TextField(
                 controller: _specialtyController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Специальность',
                   border: OutlineInputBorder(),
                 ),
@@ -42,7 +44,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
               SizedBox(height: 12),
               TextField(
                 controller: _experienceController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Опыт работы',
                   border: OutlineInputBorder(),
                 ),
@@ -76,7 +78,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
 
                 // Показываем уведомление
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                     content: Text('Врач добавлен успешно'),
                     backgroundColor: Colors.green,
                   ),
@@ -101,16 +103,28 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
         foregroundColor: Colors.white,
         elevation: 4,
         actions: [
+          // Демонстрация маршрутизированной навигации
+          IconButton(
+            icon: Icon(Icons.business),
+            onPressed: () {
+              Navigator.pushNamed(context, '/departments');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.contacts),
+            onPressed: () {
+              Navigator.pushNamed(context, '/contacts');
+            },
+          ),
           IconButton(
             icon: Icon(Icons.add),
             onPressed: _addDoctor,
-            tooltip: 'Добавить врача',
           ),
         ],
       ),
       backgroundColor: Colors.grey[50],
       body: doctorsContainer.doctors.isEmpty
-          ? EmptyState(
+          ? const EmptyState(
         title: 'Нет врачей',
         message: 'Добавьте первого врача в клинику',
         icon: Icons.medical_services,
@@ -144,7 +158,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
               DoctorsContainer.of(context).removeDoctor(doctor.id);
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
+                const SnackBar(
                   content: Text('Врач удален'),
                   backgroundColor: Colors.red,
                 ),

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'features/profile/screens/profile_list_screen.dart';
 import 'shared/app_theme.dart';
 import 'features/doctors/state/doctors_container.dart';
 import 'features/appointments/state/appointments_container.dart';
 import 'features/profile/state/profile_container.dart';
+import 'features/gallery/screens/medical_gallery_screen.dart';
+import 'features/department/screens/department_screen.dart';
 import 'features/doctors/screens/doctors_list_screen.dart';
 import 'features/appointments/screens/appointments_list_screen.dart';
-import 'features/gallery/screens/medical_gallery_screen.dart';
+import 'features/profile/screens/profile_list_screen.dart';
+import 'features/contacts/screens/contacts_screen.dart';
 
 class MedicalCenterApp extends StatelessWidget {
-  const MedicalCenterApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,13 +18,22 @@ class MedicalCenterApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       home: AppStateContainer(),
       debugShowCheckedModeBanner: false,
+
+      // Маршрутизированная навигация
+      routes: {
+        '/': (context) => AppStateContainer(),
+        '/doctors': (context) => DoctorsListScreen(),
+        '/appointments': (context) => AppointmentsListScreen(),
+        '/gallery': (context) => MedicalGalleryScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/departments': (context) => DepartmentScreen(),
+        '/contacts': (context) => ContactsScreen(),
+      },
     );
   }
 }
 
 class AppStateContainer extends StatelessWidget {
-  const AppStateContainer({super.key});
-
   @override
   Widget build(BuildContext context) {
     return DoctorsContainer(
@@ -37,6 +46,7 @@ class AppStateContainer extends StatelessWidget {
   }
 }
 
+// Главный экран с BottomNavigationBar (вертикальная навигация)
 class MainNavigationScreen extends StatefulWidget {
   @override
   _MainNavigationScreenState createState() => _MainNavigationScreenState();
@@ -50,6 +60,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     AppointmentsListScreen(),
     MedicalGalleryScreen(),
     ProfileScreen(),
+    DepartmentScreen(), // Новый экран отделений
   ];
 
   @override
@@ -73,7 +84,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               _currentIndex = index;
             });
           },
-          backgroundColor: Colors.blue[800], // Непрозрачный фон
+          backgroundColor: Colors.blue[800],
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white70,
           type: BottomNavigationBarType.fixed,
@@ -93,6 +104,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Профиль',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Отделения',
             ),
           ],
         ),

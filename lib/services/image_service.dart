@@ -123,6 +123,7 @@ class ImageService {
       ),
     );
   }
+  
 
   static Widget _buildCircleErrorPlaceholder(double size) {
     return Container(
