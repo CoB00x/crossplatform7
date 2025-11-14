@@ -19,7 +19,7 @@ class MedicalCenterApp extends StatelessWidget {
       home: AppStateContainer(),
       debugShowCheckedModeBanner: false,
 
-      // Маршрутизированная навигация
+      // Маршрутизированная навигацияj
       routes: {
         '/': (context) => AppStateContainer(),
         '/doctors': (context) => DoctorsListScreen(),
